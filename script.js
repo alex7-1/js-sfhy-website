@@ -244,3 +244,33 @@ if (automationDialog) {
     if (event.key === 'ArrowRight') renderDialogSlide(dialogIndex + 1);
   });
 }
+
+// Field videos load only after a visitor opens a case, keeping the page itself lightweight.
+const videoCaseDialog = document.querySelector('[data-video-case-dialog]');
+if (videoCaseDialog) {
+  const player = videoCaseDialog.querySelector('[data-video-case-player]');
+  const title = videoCaseDialog.querySelector('[data-video-case-title]');
+  const category = videoCaseDialog.querySelector('[data-video-case-category]');
+  const summary = videoCaseDialog.querySelector('[data-video-case-summary]');
+
+  document.querySelectorAll('[data-video-case-open]').forEach(card => {
+    card.addEventListener('click', () => {
+      title.textContent = card.dataset.title;
+      category.textContent = card.dataset.category;
+      summary.textContent = card.dataset.summary;
+      player.poster = card.dataset.videoPoster;
+      player.src = card.dataset.videoSrc;
+      videoCaseDialog.showModal();
+      document.body.classList.add('case-dialog-open');
+    });
+  });
+
+  videoCaseDialog.querySelector('[data-video-case-close]').addEventListener('click', () => videoCaseDialog.close());
+  videoCaseDialog.addEventListener('click', event => { if (event.target === videoCaseDialog) videoCaseDialog.close(); });
+  videoCaseDialog.addEventListener('close', () => {
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+    document.body.classList.remove('case-dialog-open');
+  });
+}

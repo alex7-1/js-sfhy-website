@@ -12,6 +12,7 @@ const types = {
   '.jpeg': 'image/jpeg',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.mp4': 'video/mp4',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
   '.txt': 'text/plain; charset=utf-8',
@@ -51,8 +52,27 @@ const server = http.createServer((request, response) => {
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Cache-Control': extension === '.html' ? 'public, max-age=0, must-revalidate' : 'public, max-age=604800, immutable'
     };
-    response.writeHead(200, headers);
-    fs.createReadStream(file).pipe(response);
+    const range = request.headers.range;
+    if (extension === '.mp4' && range) {
+      const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+      if (!match) {
+        response.writeHead(416, { ...headers, 'Content-Range': `bytes */${stat.size}` }).end();
+        return;
+      }
+      const start = match[1] ? Number(match[1]) : 0;
+      const end = match[2] ? Math.min(Number(match[2]), stat.size - 1) : stat.size - 1;
+      if (start > end || start >= stat.size) {
+        response.writeHead(416, { ...headers, 'Content-Range': `bytes */${stat.size}` }).end();
+        return;
+      }
+      response.writeHead(206, { ...headers, 'Accept-Ranges': 'bytes', 'Content-Range': `bytes ${start}-${end}/${stat.size}`, 'Content-Length': end - start + 1 });
+      if (request.method === 'HEAD') response.end();
+      else fs.createReadStream(file, { start, end }).pipe(response);
+      return;
+    }
+    response.writeHead(200, { ...headers, 'Content-Length': stat.size, ...(extension === '.mp4' ? { 'Accept-Ranges': 'bytes' } : {}) });
+    if (request.method === 'HEAD') response.end();
+    else fs.createReadStream(file).pipe(response);
   });
 });
 
