@@ -1,0 +1,12 @@
+{
+  "name": "js-sfhy-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "江苏三丰鸿业工业有限公司官网",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
