@@ -5,7 +5,7 @@
 ## 网站结构
 
 - `index.html`：公司官网首页
-- `company.html`：公司简介、经营增长与团队能力
+- `company.html`：公司简介、团队构成与制造能力
 - `precision-dies.html`：精密刀模事业部
 - `rotary-dies.html`：高精密圆刀模产品页
 - `flat-dies.html`：平刀模产品页

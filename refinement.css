@@ -85,32 +85,15 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible { outline:2px soli
 .company-value-grid p { color:#a5b4bc; font-size:13px; line-height:1.9; }
 .company-contact .separate-contact__title p:last-child { color:#adc0c8; font-size:13px; }
 
-/* Business performance, drawn from company-supplied annual sales figures. */
+/* Team structure and delivery capability. */
 .company-performance { padding:100px 0 110px; background:#edf1ef; color:#132b38; border-block:1px solid #dee5e1; }
 .performance-heading { margin-bottom:64px; }
 .performance-heading h2 { margin:18px 0 0; font-size:clamp(30px,3.4vw,48px); line-height:1.4; font-weight:500; letter-spacing:-.035em; }
 .performance-heading em { font-style:normal; color:#247579; }
-.revenue-layout { display:grid; grid-template-columns:250px minmax(0,1fr); gap:60px; }
 .section-index { display:block; font-size:12px; color:#657b83; letter-spacing:.06em; }
-.revenue-total { margin-top:32px; display:flex; align-items:baseline; gap:12px; }
-.revenue-total strong { font:400 76px/1 Arial,sans-serif; letter-spacing:-.055em; }.revenue-total > span { font-size:18px; }
-.revenue-intro > p { color:#576e79; font-size:14px; margin:13px 0; }
-.revenue-multiple { border-top:1px solid #cad6d4; margin-top:32px; padding-top:25px; }
-.revenue-multiple strong { font:400 36px/1.3 Arial,sans-serif; }.revenue-multiple strong span { font-size:15px; }.revenue-multiple p { font-size:11px; color:#61747a; }
-.revenue-intro .data-footnote { font-size:11px; line-height:1.9; margin-top:28px; color:#6d7f87; }
 .chart-caption { display:flex; align-items:baseline; justify-content:space-between; gap:20px; }
 .chart-caption h3 { font-size:17px; font-weight:500; margin:0; }.chart-caption > span { font-size:11px; color:#687d83; letter-spacing:.03em; }
-.revenue-chart-scroll { overflow:auto; padding-top:28px; }
-.revenue-chart { display:grid; grid-template-columns:repeat(9,minmax(0,1fr)); gap:14px; align-items:end; height:330px; min-width:540px; border-bottom:1px solid #a8babd; padding:28px 3px 32px; background:repeating-linear-gradient(to top,transparent 0,transparent 79px,#d4deda 80px); }
-.revenue-bar { height:var(--value); min-height:38px; position:relative; display:flex; flex-direction:column; justify-content:end; cursor:default; }
-.revenue-bar i { display:block; height:100%; width:100%; background:#527b83; transition:background .25s,filter .25s; }
-.revenue-bar:nth-child(2n) i { background:#446975; }.revenue-bar:last-child i { background:#ba916e; }
-.revenue-bar:hover i,.revenue-bar:focus-visible i { background:#1d515a; }.revenue-bar:last-child:hover i { background:#a67d58; }
-.revenue-bar__value { position:absolute; bottom:calc(100% + 11px); width:100%; text-align:center; font:12px Arial,sans-serif; color:#243f4b; white-space:nowrap; }
-.revenue-bar__year { position:absolute; top:calc(100% + 15px); width:100%; text-align:center; font:11px Arial,sans-serif; color:#687d83; }
-.chart-context { margin-top:25px; color:#526e77; font-size:12px; line-height:1.85; }
-.chart-scroll-hint { display:none; }
-.people-layout { margin-top:68px; padding-top:62px; border-top:1px solid #cbd6d1; display:grid; grid-template-columns:250px minmax(0,1fr); gap:60px; }
+.people-layout { display:grid; grid-template-columns:250px minmax(0,1fr); gap:60px; }
 .people-intro h3 { font-size:34px; font-weight:500; line-height:1.4; margin:22px 0 18px; }
 .people-intro > p { font-size:13px; color:#5c717b; line-height:1.9; }
 .people-total { margin-top:28px; }.people-total strong { font:400 46px Arial,sans-serif; }.people-total strong span { font-size:16px; }.people-total p { font-size:12px; color:#6b7d84; }
@@ -119,8 +102,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible { outline:2px soli
 .people-legend { margin:0; display:grid; grid-template-columns:repeat(5,1fr); gap:16px; }
 .people-legend dt { font-size:12px; color:#5c737d; white-space:nowrap; }.people-legend dt i { display:inline-block; width:7px; height:7px; margin-right:7px; border-radius:50%; }
 .people-legend dd { font:400 36px Arial,sans-serif; margin:18px 0 0; }.people-legend small { font-size:15px; margin-left:4px; color:#647c84; }
-.people-investment { display:flex; align-items:center; gap:26px; margin-top:40px; padding:23px 0; border-top:1px solid #ccd6d3; border-bottom:1px solid #ccd6d3; }
-.people-investment strong { font:400 36px Arial,sans-serif; color:#247579; }.people-investment span { font-size:13px; color:#4d6872; line-height:1.8; }
 
 /* Case library and technical product pages. */
 .landing-hero { min-height:0; padding:82px 0 36px; }
@@ -153,23 +134,22 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible { outline:2px soli
 @media(max-width:1150px) {
  .desktop-nav { gap:18px; }.site-header { grid-template-columns:270px auto 150px; padding-inline:24px; }
  .company-profile__layout { gap:40px; }.company-profile__copy h2 { font-size:34px; }
- .revenue-layout,.people-layout { grid-template-columns:200px minmax(0,1fr); gap:36px; }
+ .people-layout { grid-template-columns:200px minmax(0,1fr); gap:36px; }
  .people-legend { grid-template-columns:repeat(3,1fr); gap:25px; }
  .product-page .landing-hero__content { max-width:85%; }.product-hero-visual { opacity:.18; }
 }
 @media(max-width:1000px) {
  .site-header { display:flex; justify-content:space-between; }.site-header .desktop-nav,.site-header .header-cta { display:none; }.site-header .menu-toggle { display:block; }
  .company-profile__layout { grid-template-columns:1fr; }.company-profile__visual { min-height:480px; }.company-profile__image--main { height:360px; }.company-profile__image--small { left:0; }
- .revenue-layout,.people-layout { grid-template-columns:1fr; }.revenue-intro { display:grid; grid-template-columns:1fr 1fr; column-gap:40px; }.revenue-intro .section-index { grid-column:1/-1; }.revenue-total { grid-row:2; }.revenue-multiple { grid-column:2; grid-row:2/4; margin-top:32px; }.revenue-intro .data-footnote { grid-column:1/-1; }.people-intro { max-width:500px; }
+ .people-layout { grid-template-columns:1fr; }.people-intro { max-width:500px; }
 }
 @media(max-width:760px) {
- .chart-scroll-hint { display:block; font-size:11px; color:#687d83; margin-top:12px; }
  .landing-section,.gateway,.product-hub,.company-performance { padding:72px 0; }.site-header { padding:0 20px; }
  .home-hero--corporate { height:auto; min-height:790px; }.home-hero--corporate .home-hero__content { padding-top:165px; padding-bottom:110px; }.home-hero--corporate h1 { font-size:49px; }.home-hero--corporate .home-hero__content > p:not(.eyebrow) { font-size:14px; }.home-hero .hero-actions { flex-direction:row; width:auto; gap:10px; }.home-hero .hero-actions .btn { padding-inline:14px; font-size:12px; }.home-hero__labels { font-size:8px; }
  .company-hero { min-height:0; }.company-hero__content { padding-top:125px; padding-bottom:42px; }.company-hero__content h1 { font-size:48px; }.company-hero__content .eyebrow { font-size:8px; }.company-hero__content > p:not(.eyebrow) { font-size:14px; }.company-hero__marks { padding-bottom:16px; }.company-hero__marks div { padding:18px 14px; }.company-hero__marks strong { font-size:28px; }.company-hero__marks span { font-size:11px; }
  .landing-heading h2,.company-profile__copy h2,.performance-heading h2 { font-size:32px; }.company-profile__copy h2 { text-wrap:initial; }.company-profile__visual { min-height:400px; }.company-profile__image--main { height:290px; }.company-profile__image--small { width:60%; height:165px; }.company-profile__badge { width:125px; height:104px; }.company-profile__badge strong { font-size:30px; }.company-profile__badge span { font-size:9px; }
  .company-workshop-grid { grid-template-columns:1fr; grid-auto-rows:260px; }.company-division-card__copy { left:24px; right:24px; }.company-division-card h3 { font-size:27px; }.company-workshop-grid figure:last-child { grid-column:auto; }
- .performance-heading { margin-bottom:38px; }.revenue-total strong { font-size:60px; }.revenue-total { gap:8px; }.revenue-multiple strong { font-size:31px; }.revenue-layout { gap:20px; }.revenue-chart { height:285px; gap:13px; }.revenue-chart-scroll { padding:30px 4px 10px; }.revenue-chart-wrap { min-width:0; }.people-layout { margin-top:42px; padding-top:42px; }.people-legend { grid-template-columns:repeat(3,1fr); }.people-legend dd { font-size:30px; }.people-investment { gap:20px; }.people-investment span { font-size:12px; }
+ .performance-heading { margin-bottom:38px; }.people-legend { grid-template-columns:repeat(3,1fr); }.people-legend dd { font-size:30px; }
  .landing-hero { padding-top:70px; }.landing-hero .container { padding-top:74px; padding-bottom:40px; }.landing-hero h1,.product-page .landing-hero__content h1 { font-size:40px; }.landing-hero__marks strong { font-size:22px; }.product-page .landing-hero__content { max-width:100%; }.landing-hero__actions { flex-wrap:wrap; }.product-hero-visual { top:160px; width:65%; }.company-values__heading h2 { font-size:30px; }
  .automation-case-card h3,.automation-case-card p { min-height:0; }.case-permission { margin-top:-8px; }.automation-case-dialog__copy h2 { font-size:27px; }
  .product-link p { max-width:100%; padding-bottom:25px; }.product-link b { right:auto; left:0; }.division-card__content > p { font-size:9px; }.division-card li { font-size:10px; }
