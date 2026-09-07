@@ -50,7 +50,7 @@ const server = http.createServer((request, response) => {
       'Content-Type': types[extension] || 'application/octet-stream',
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'Cache-Control': extension === '.html' ? 'public, max-age=0, must-revalidate' : 'public, max-age=604800, immutable'
+      'Cache-Control': ['.html', '.css', '.js'].includes(extension) ? 'public, max-age=0, must-revalidate' : 'public, max-age=604800, immutable'
     };
     const range = request.headers.range;
     if (extension === '.mp4' && range) {
