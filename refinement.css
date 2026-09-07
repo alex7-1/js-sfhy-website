@@ -244,3 +244,20 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible { outline:2px soli
  .equipment-crosslink .container { flex-direction:column; align-items:flex-start; }.equipment-crosslink h2 { font-size:24px; }
 }
 @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
+
+/* Company profile: latest public company material */
+.company-profile__rd { display:flex; align-items:center; gap:18px; margin-top:28px; padding:18px 0; border-block:1px solid #d8e2e3; }
+.company-profile__rd strong { color:#173f46; font:400 38px/1 Arial,sans-serif; letter-spacing:-.04em; }
+.company-profile__rd span { color:#5b7179; font-size:12px; line-height:1.7; }
+.company-clients { background:#f7f9f8; }
+.company-clients__heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,.55fr); gap:80px; align-items:end; margin-bottom:48px; }
+.company-clients__heading h2 { margin:16px 0 0; color:#142d38; font-size:clamp(32px,3.4vw,48px); font-weight:500; line-height:1.42; letter-spacing:-.04em; }
+.company-clients__heading h2 em { color:#247579; font-style:normal; }
+.company-clients__heading > p { margin:0 0 7px; color:#657981; font-size:13px; line-height:1.9; }
+.company-client-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); border-top:1px solid #dce4e2; border-left:1px solid #dce4e2; }
+.company-client-grid figure { min-height:130px; display:grid; grid-template-rows:1fr auto; place-items:center; margin:0; padding:22px 18px 14px; overflow:hidden; background:#fff; border-right:1px solid #dce4e2; border-bottom:1px solid #dce4e2; }
+.company-client-grid img { width:100%; height:55px; object-fit:contain; filter:saturate(.72) contrast(.97); transition:filter .25s ease,transform .25s ease; }
+.company-client-grid figure:hover img { filter:saturate(1) contrast(1); transform:translateY(-2px); }
+.company-client-grid figcaption { margin-top:11px; color:#718087; font-size:9px; letter-spacing:.04em; }
+@media(max-width:1000px) { .company-client-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }.company-clients__heading { gap:40px; } }
+@media(max-width:760px) { .company-clients__heading { grid-template-columns:1fr; gap:18px; margin-bottom:34px; }.company-client-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.company-client-grid figure { min-height:112px; padding:18px 12px 12px; }.company-client-grid img { height:46px; } }
