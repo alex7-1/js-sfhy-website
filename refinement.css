@@ -113,6 +113,11 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible { outline:2px soli
 .product-page .landing-hero__content { max-width:52%; }.product-page .landing-hero__content h1 { font-size:clamp(42px,4vw,60px); }
 .product-hero-visual { top:175px; height:340px; width:40%; background:#f4f5f2; border:0; }
 .product-type { background:#f4f6f5; }.product-type h3 { font-size:21px; font-weight:500; }.product-type p { font-size:13px; line-height:1.8; }
+.product-type--case { width:100%; padding:0; text-align:left; color:#18303b; font:inherit; cursor:pointer; transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease; }
+.product-type--case:hover { transform:translateY(-4px); border-color:#7ba5a5; box-shadow:0 16px 38px #0a283312; }
+.product-type--case:focus-visible { outline:2px solid #4b9698; outline-offset:3px; }
+.product-type--case > div { min-height:160px; display:flex; flex-direction:column; }
+.product-type--case b { display:flex; justify-content:space-between; margin-top:auto; padding-top:14px; color:#3d777a; border-top:1px solid #d9e2df; font-size:11px; font-weight:500; }
 .engineering-grid { border-color:#38505d; }.landing-section--dark .engineering-grid article { border-color:#38505d; }.engineering-grid h3 { font-weight:500; font-size:19px; }.engineering-grid p { font-size:13px; line-height:1.9; }.landing-section--dark .engineering-grid p { color:#a9bac5; }
 .automation-about__copy h2,.packaging-focus__copy h2 { font-size:clamp(32px,3.2vw,46px); font-weight:500; line-height:1.45; }
 .automation-about__copy > p:not(.eyebrow),.packaging-focus__copy > p:not(.eyebrow) { font-size:14px; line-height:1.95; }
