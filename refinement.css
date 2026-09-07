@@ -295,8 +295,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible { outline:2px soli
 .die-client-featured strong { color:#203d48; font:600 clamp(18px,2vw,28px)/1 Arial,sans-serif; letter-spacing:.025em; }
 .die-client-featured span { margin-top:15px; color:#79888e; font-size:11px; }
 .die-client-logo { width:100%; height:54px; display:grid; place-items:center; }
-.die-client-logo img { width:112px; height:50px; object-fit:contain; filter:grayscale(1) saturate(0) opacity(.7); transition:filter .25s ease,transform .25s ease; }
-.die-client-featured article:hover .die-client-logo img { filter:none; transform:scale(1.04); }
+.die-client-logo img { width:112px; height:50px; object-fit:contain; transition:transform .25s ease; }
+.die-client-featured article:hover .die-client-logo img { transform:scale(1.04); }
 .die-client-logo + strong { margin-top:18px; font-size:14px; letter-spacing:.035em; }
 .die-client-logo + strong + span { margin-top:9px; }
 .die-client-list { display:grid; grid-template-columns:repeat(7,1fr); margin-top:16px; border-top:1px solid #cfd9d5; border-left:1px solid #cfd9d5; }
